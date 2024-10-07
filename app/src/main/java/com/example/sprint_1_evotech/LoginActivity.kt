@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login() {
-        if (loginEditText.text.toString() == "login") {
+        if (loginEditText.text.toString() == "admin" && senhaEditText.text.toString() == "password") {
             errorTextView.setBackgroundColor(Color.parseColor("#96ff9d"))
             errorTextView.text = getString(R.string.usuario_encontrado)
             errorTextView.isVisible = true
