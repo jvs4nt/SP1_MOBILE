@@ -29,7 +29,9 @@
         android:layout_height="49dp"
         android:background="#329797FF"
         android:ems="10"
-        android:hint="teste"
+        android:hint="@string/digite_seu_login"
+        android:importantForAccessibility="yes"
+        android:textColorHint="@android:color/transparent"
         android:inputType="text"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +60,9 @@
         android:layout_height="49dp"
         android:background="#329797FF"
         android:ems="10"
-        android:hint="teste 2"
+        android:hint="@string/digite_sua_senha"
+        android:importantForAccessibility="yes"
+        android:textColorHint="@android:color/transparent"
         android:inputType="text"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,7 +86,7 @@
         app:layout_constraintVertical_bias="0.321" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginButton"
         android:layout_width="336dp"
         android:layout_height="55dp"
         android:backgroundTint="#D4DBFF"
