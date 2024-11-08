@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "158189019923",
+    "project_id": "challenge-evotech",
+    "storage_bucket": "challenge-evotech.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158189019923:android:d80c61bce7db9490b4b0e6",
+        "android_client_info": {
+          "package_name": "com.example.sprint_1_evotech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGPybarZJW-AuUaIXEgvTMHcLPRz9WoBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

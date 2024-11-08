@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var errorTextView: TextView
@@ -19,11 +21,13 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var senhaEditText: EditText
     private lateinit var registerButton: Button
     private lateinit var forgotPasswordButton: Button
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
+        auth = FirebaseAuth.getInstance()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -53,18 +57,50 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun login() {
-        if (loginEditText.text.toString() == "admin" && senhaEditText.text.toString() == "password") {
-            errorTextView.setBackgroundColor(Color.parseColor("#96ff9d"))
-            errorTextView.text = getString(R.string.usuario_encontrado)
-            errorTextView.isVisible = true
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            updateUI(currentUser)
+        }
+    }
 
+    private fun login() {
+        val email = loginEditText.text.toString()
+        val password = senhaEditText.text.toString()
+
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    errorTextView.setBackgroundColor(Color.parseColor("#f76f7d"))
+                    errorTextView.text = getString(R.string.usuario_nao_encontrado)
+                    errorTextView.isVisible = true
+                }
+            }
+    }
+
+//    private fun login() {
+//        if (loginEditText.text.toString() == "admin" && senhaEditText.text.toString() == "password") {
+//            errorTextView.setBackgroundColor(Color.parseColor("#96ff9d"))
+//            errorTextView.text = getString(R.string.usuario_encontrado)
+//            errorTextView.isVisible = true
+//
+//            val intent = Intent(this, ProfileActivity::class.java)
+//            startActivity(intent)
+//        } else {
+//            errorTextView.setBackgroundColor(Color.parseColor("#f76f7d"))
+//            errorTextView.text = getString(R.string.usuario_nao_encontrado)
+//            errorTextView.isVisible = true
+//        }
+//    }
+
+    private fun updateUI(user: FirebaseUser?) {
+        if (user != null) {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
-        } else {
-            errorTextView.setBackgroundColor(Color.parseColor("#f76f7d"))
-            errorTextView.text = getString(R.string.usuario_nao_encontrado)
-            errorTextView.isVisible = true
         }
     }
 }
