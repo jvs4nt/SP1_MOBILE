@@ -39,6 +39,11 @@ class ProfileActivity : AppCompatActivity() {
             userTextView.text = it.email ?: "Email não disponível"
         }
 
+        voltarButton.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
         logoutButton.setOnClickListener {
             auth.signOut()
             val intent = Intent(this, LoginActivity::class.java)
