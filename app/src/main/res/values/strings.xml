@@ -19,4 +19,13 @@
     <string name="login_vazio">O login está vazio!</string>
     <string name="email_enviado">Um link foi enviado ao seu email cadastrado!</string>
     <string name="voltar">Voltar</string>
+    <string name="goBack"><![CDATA[<]]></string>
+    <string name="in_cio">Início</string>
+    <string name="autentica_o_via_faceid">Autenticação Via FaceID</string>
+    <string name="notifica_es">Notificações</string>
+    <string name="informa_es_pessoais">Informações Pessoais</string>
+    <string name="senha_de_acesso">Senha de Acesso</string>
+    <string name="informa_es_gerais">Informações Gerais</string>
+    <string name="geral">Geral</string>
+    <string name="nome_de_usu_rio">Nome de usuário</string>
 </resources>
