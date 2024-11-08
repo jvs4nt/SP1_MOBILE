@@ -5,6 +5,40 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:background="#E0E0E6"
+    android:foregroundTint="@android:color/transparent"
+    android:padding="0dp"
     tools:context=".ProfileActivity">
 
+    <Button
+        android:id="@+id/voltarButton"
+        android:layout_width="59dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@android:color/transparent"
+        android:elegantTextHeight="false"
+        android:enabled="false"
+        android:fadeScrollbars="false"
+        android:text="<"
+        android:textAlignment="center"
+        android:textColor="#504B69"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.005"
+        app:rippleColor="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="107dp"
+        android:layout_height="97dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.162"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
