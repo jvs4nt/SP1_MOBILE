@@ -15,4 +15,5 @@
     <string name="registro_erro">Por favor, preencha todos os campos.</string>
     <string name="email">Email</string>
     <string name="enviar_email_de_recupera_o">Enviar email de recuperação</string>
+    <string name="erro_email_invalido">Por favor, insira um e-mail válido.</string>
 </resources>
