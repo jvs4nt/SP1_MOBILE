@@ -18,6 +18,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginEditText: EditText
     private lateinit var senhaEditText: EditText
     private lateinit var registerButton: Button
+    private lateinit var forgotPasswordButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
         errorTextView.isVisible = false
         loginButton = findViewById(R.id.loginButton)
         registerButton = findViewById(R.id.button2)
+        forgotPasswordButton = findViewById(R.id.forgotPasswordButton)
 
         loginButton.setOnClickListener {
             login()
@@ -42,6 +44,11 @@ class LoginActivity : AppCompatActivity() {
 
         registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        forgotPasswordButton.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
         }
     }
