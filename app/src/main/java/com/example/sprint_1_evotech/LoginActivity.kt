@@ -1,5 +1,6 @@
 package com.example.sprint_1_evotech
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
@@ -16,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var loginEditText: EditText
     private lateinit var senhaEditText: EditText
+    private lateinit var registerButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,16 +29,21 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        errorTextView = findViewById<TextView>(R.id.errorTextView)
-        loginEditText = findViewById<EditText>(R.id.loginEditText)
-        senhaEditText = findViewById<EditText>(R.id.senhaEditText)
+        errorTextView = findViewById(R.id.errorTextView)
+        loginEditText = findViewById(R.id.loginEditText)
+        senhaEditText = findViewById(R.id.senhaEditText)
         errorTextView.isVisible = false
-        loginButton = findViewById<Button>(R.id.loginButton)
+        loginButton = findViewById(R.id.loginButton)
+        registerButton = findViewById(R.id.button2)
 
-        loginButton.setOnClickListener() {
+        loginButton.setOnClickListener {
             login()
         }
 
+        registerButton.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun login() {
