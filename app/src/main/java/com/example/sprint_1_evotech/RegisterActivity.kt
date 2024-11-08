@@ -19,6 +19,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var loginEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var nameEditText: EditText
+    private lateinit var confirmPasswordEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,7 @@ class RegisterActivity : AppCompatActivity() {
         registerButton = findViewById(R.id.registerButton)
         button2 = findViewById(R.id.button2)
         nameEditText = findViewById(R.id.nameEditText)
+        confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText)
 
         errorTextView.isVisible = false
 
@@ -52,9 +54,10 @@ class RegisterActivity : AppCompatActivity() {
     private fun register() {
         val username = loginEditText.text.toString()
         val password = passwordEditText.text.toString()
-        val nome = nameEditText.text.toString()
+        val name = nameEditText.text.toString()
+        val confirmPassword = confirmPasswordEditText.text.toString()
 
-        if (username.isNotEmpty() && password.isNotEmpty() && nome.isNotEmpty()) {
+        if (username.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty() && confirmPassword.isNotEmpty()) {
             errorTextView.setBackgroundColor(Color.parseColor("#96ff9d"))
             errorTextView.text = getString(R.string.registro_sucesso)
             errorTextView.isVisible = true
