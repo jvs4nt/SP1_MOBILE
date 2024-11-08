@@ -9,4 +9,6 @@
     <string name="login">Login</string>
     <string name="usuario_nao_encontrado">Usuário não encontrado!</string>
     <string name="usuario_encontrado">Usuário encontrado com sucesso!</string>
+    <string name="digite_seu_nome">digite seu nome</string>
+    <string name="confirme_sua_senha">Confirme sua senha</string>
 </resources>
