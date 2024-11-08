@@ -5,8 +5,8 @@
     <string name="n_o_tem_uma_conta_cadastre_se_agora">Não tem uma conta? Cadastre-se agora!</string>
     <string name="cadastre_se">Cadastre-se</string>
     <string name="digite_sua_senha">digite sua senha</string>
-    <string name="digite_seu_login">digite seu login</string>
-    <string name="login">Login</string>
+    <string name="digite_seu_login">digite seu email</string>
+    <string name="login">Email</string>
     <string name="usuario_nao_encontrado">Usuário não encontrado!</string>
     <string name="usuario_encontrado">Usuário encontrado com sucesso!</string>
     <string name="digite_seu_nome">digite seu nome</string>
@@ -16,7 +16,7 @@
     <string name="email">Email</string>
     <string name="enviar_email_de_recupera_o">Enviar email de recuperação</string>
     <string name="erro_email_invalido">Por favor, insira um e-mail válido.</string>
-    <string name="login_vazio">O login está vazio!</string>
+    <string name="login_vazio">O email está vazio!</string>
     <string name="email_enviado">Um link foi enviado ao seu email cadastrado!</string>
     <string name="voltar">Voltar</string>
     <string name="goBack"><![CDATA[<]]></string>
@@ -30,5 +30,6 @@
     <string name="nome_de_usu_rio">Nome de usuário</string>
     <string name="senhas_nao_coincidem">A senha não coincide com a confirmação!</string>
     <string name="preencha_todos_campos">Por favor, preencha todos os campos.</string>
+    <string name="sair">Sair</string>
 
 </resources>

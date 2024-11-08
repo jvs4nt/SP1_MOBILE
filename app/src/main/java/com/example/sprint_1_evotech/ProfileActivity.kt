@@ -3,6 +3,7 @@ package com.example.sprint_1_evotech
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,6 +13,8 @@ import com.google.firebase.auth.FirebaseAuth
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var voltarButton: Button
+    private lateinit var userTextView: TextView
+    private lateinit var logoutButton: Button
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +31,15 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         voltarButton = findViewById(R.id.voltarButton)
+        userTextView = findViewById(R.id.userTextView)
+        logoutButton = findViewById(R.id.logoutButton)
 
-        voltarButton.setOnClickListener {
+        val user = auth.currentUser
+        user?.let {
+            userTextView.text = it.email ?: "Email não disponível"
+        }
+
+        logoutButton.setOnClickListener {
             auth.signOut()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

@@ -11,6 +11,20 @@
     android:padding="0dp"
     tools:context=".ProfileActivity">
 
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="336dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#666680"
+        android:text="@string/sair"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.989" />
+
     <LinearLayout
         android:id="@+id/background2"
         android:layout_width="379dp"
