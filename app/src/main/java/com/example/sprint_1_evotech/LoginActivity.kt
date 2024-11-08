@@ -58,6 +58,9 @@ class LoginActivity : AppCompatActivity() {
             errorTextView.setBackgroundColor(Color.parseColor("#96ff9d"))
             errorTextView.text = getString(R.string.usuario_encontrado)
             errorTextView.isVisible = true
+
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         } else {
             errorTextView.setBackgroundColor(Color.parseColor("#f76f7d"))
             errorTextView.text = getString(R.string.usuario_nao_encontrado)
