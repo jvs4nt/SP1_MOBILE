@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var errorTextView: TextView
@@ -54,20 +55,65 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun register() {
-        val username = loginEditText.text.toString()
-        val password = passwordEditText.text.toString()
-        val name = nameEditText.text.toString()
-        val confirmPassword = confirmPasswordEditText.text.toString()
+    private fun createAccount(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    errorTextView.setBackgroundColor(Color.parseColor("#f76f7d"))
+                    errorTextView.text = getString(R.string.registro_erro)
+                    errorTextView.isVisible = true
+                }
+            }
+    }
 
-        if (username.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty() && confirmPassword.isNotEmpty()) {
+    private fun updateUI(user: FirebaseUser?) {
+        if (user != null) {
             errorTextView.setBackgroundColor(Color.parseColor("#96ff9d"))
             errorTextView.text = getString(R.string.registro_sucesso)
             errorTextView.isVisible = true
+
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun register() {
+        val email = loginEditText.text.toString()
+        val password = passwordEditText.text.toString()
+        val confirmPassword = confirmPasswordEditText.text.toString()
+
+        if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+            if (password == confirmPassword) {
+                createAccount(email, password)
+            } else {
+                errorTextView.setBackgroundColor(Color.parseColor("#f76f7d"))
+                errorTextView.text = getString(R.string.senhas_nao_coincidem)
+                errorTextView.isVisible = true
+            }
         } else {
             errorTextView.setBackgroundColor(Color.parseColor("#f76f7d"))
-            errorTextView.text = getString(R.string.registro_erro)
+            errorTextView.text = getString(R.string.preencha_todos_campos)
             errorTextView.isVisible = true
         }
     }
+
+//    private fun register() {
+//        val username = loginEditText.text.toString()
+//        val password = passwordEditText.text.toString()
+//        val name = nameEditText.text.toString()
+//        val confirmPassword = confirmPasswordEditText.text.toString()
+//
+//        if (username.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty() && confirmPassword.isNotEmpty()) {
+//            errorTextView.setBackgroundColor(Color.parseColor("#96ff9d"))
+//            errorTextView.text = getString(R.string.registro_sucesso)
+//            errorTextView.isVisible = true
+//        } else {
+//            errorTextView.setBackgroundColor(Color.parseColor("#f76f7d"))
+//            errorTextView.text = getString(R.string.registro_erro)
+//            errorTextView.isVisible = true
+//        }
+//    }
 }

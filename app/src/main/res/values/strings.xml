@@ -28,4 +28,7 @@
     <string name="informa_es_gerais">Informações Gerais</string>
     <string name="geral">Geral</string>
     <string name="nome_de_usu_rio">Nome de usuário</string>
+    <string name="senhas_nao_coincidem">A senha não coincide com a confirmação!</string>
+    <string name="preencha_todos_campos">Por favor, preencha todos os campos.</string>
+
 </resources>
