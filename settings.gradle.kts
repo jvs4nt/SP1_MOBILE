@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SPRINT_1_EVOTECH"
+rootProject.name = "SPRINT_2_EVOTECH"
 include(":app")
  

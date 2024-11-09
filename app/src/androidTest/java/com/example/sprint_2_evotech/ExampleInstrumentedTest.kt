@@ -1,4 +1,4 @@
-package com.example.sprint_1_evotech
+package com.example.sprint_2_evotech
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

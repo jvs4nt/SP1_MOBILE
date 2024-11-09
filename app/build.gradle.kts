@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.sprint_1_evotech"
+    namespace = "com.example.sprint_2_evotech"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.sprint_1_evotech"
+        applicationId = "com.example.sprint_2_evotech"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

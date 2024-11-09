@@ -1,4 +1,4 @@
-package com.example.sprint_1_evotech
+package com.example.sprint_2_evotech
 
 import android.content.Intent
 import android.graphics.Color

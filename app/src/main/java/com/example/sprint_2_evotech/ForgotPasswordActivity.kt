@@ -1,10 +1,9 @@
-package com.example.sprint_1_evotech
+package com.example.sprint_2_evotech
 
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Patterns
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -13,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
-import com.example.sprint_1_evotech.R
+import com.example.sprint_2_evotech.R
 
 class ForgotPasswordActivity : AppCompatActivity() {
 
